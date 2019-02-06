@@ -1,0 +1,42 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #7386d5;
+  color: #fff;
+  z-index: 999;
+  transition: all 0.3s;
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  transition: all 0.3s;
+}
+
+#content.moveRight {
+  width: calc(100% - 250px);
+  margin-left: 250px;
+}
+
+/* TODO: 可限制只有手機端 */
+@media (max-width: 999999999768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.show {
+    margin-left: 0;
+  }
+}

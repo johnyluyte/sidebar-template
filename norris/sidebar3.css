@@ -1,0 +1,62 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #7386d5;
+  color: #fff;
+  z-index: 999;
+  transition: all 0.3s;
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  transition: all 0.3s;
+}
+
+.overlay {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* full screen */
+  width: 100vw;
+  height: 100vh;
+  /* transparent black */
+  background: rgba(0, 0, 0, 0.7);
+  /* middle layer, i.e. appears below the sidebar */
+  z-index: 998;
+  /* animate the transition */
+  transition: all 0.5s ease-in-out;
+  /*  */
+  visibility: hidden;
+  opacity: 0;
+
+}
+/* display .overlay when it has the .active class */
+.overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* TODO: 可限制只有手機端 */
+@media (max-width: 999999999768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.show {
+    margin-left: 0;
+  }
+}

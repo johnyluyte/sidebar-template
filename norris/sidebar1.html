@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- NOTE: CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="sidebar1.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- NOTE: Sidebar  -->
+      <nav id="sidebar">
+        <h3>Bootstrap Sidebar</h3>
+      </nav>
+
+      <!-- NOTE: Page Content  -->
+      <div id="content">
+        <nav>
+          <button id="sidebarToggler">Toggle</button>
+        </nav>
+
+        <article>
+          <h2>Lorem Ipsum Dolor</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- NOTE: Hammer JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <!-- NOTE: Sidebar Toggle -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var sidebarToggler = document.querySelector("#sidebarToggler");
+
+        var hammertime = new Hammer(sidebarToggler);
+        hammertime.on("tap", function(ev) {
+          document.querySelector("#sidebar").classList.toggle("show");
+        });
+      });
+    </script>
+  </body>
+</html>
