@@ -58,7 +58,7 @@
 }
 
 /* TODO: 可限制只有手機端 */
-@media (max-width: 999999999768px) {
+/* @media (max-width: 999999999768px) { */
   #sidebar {
     margin-left: -250px;
     /* transform: ; */
@@ -68,4 +68,4 @@
     margin-left: 0;
     transform: none;
   }
-}
+/* } */
